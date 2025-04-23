@@ -1,5 +1,10 @@
 @import "tailwindcss";
 
+
+@layer utilities {
+  .font-spacemono {
+  }
+}
 :root {
   --background: #ffffff;
   --foreground: #171717;
@@ -8,13 +13,14 @@
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
 }
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --background: #0a0a0a;
+    /* --background: rgb(31 41 55 / 1); */
+    /* ; */
+  --background: rgb(15 23 42 / 1);
+
     --foreground: #ededed;
   }
 }
@@ -22,5 +28,39 @@
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+    /* font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif; */
+
+  font-family: monospace
+}
+
+@font-face {
+  font-family: 'SpaceMono';
+  src: url('/app/assets/Font/SpaceMono-Regular.woff2') format('woff2'),
+       url('/app/assets/Font/SpaceMono-Regular.woff') format('woff');
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'SpaceMono';
+  src: url('/app/assets/Font/SpaceMono-Bold.woff2') format('woff2'),
+       url('/app/assets/Font/SpaceMono-Bold.woff') format('woff');
+  font-weight: 700;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'SpaceMono';
+  src: url('/app/assets/Font/SpaceMono-Italic.woff2') format('woff2'),
+       url('/app/assets/Font/SpaceMono-Italic.woff') format('woff');
+  font-weight: 400;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: 'SpaceMono';
+  src: url('/app/assets/Font/SpaceMono-BoldItalic.woff2') format('woff2'),
+       url('/app/assets/Font/SpaceMono-BoldItalic.woff') format('woff');
+  font-weight: 700;
+  font-style: italic;
 }
