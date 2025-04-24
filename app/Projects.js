@@ -1,6 +1,7 @@
 import Image from "next/image";
 import React from "react";
 import ekopages from "./assets/images/Projects/ekopages.png";
+import Mctechy from "./assets/images/Projects/Mctechy.png";
 import { FaGithub } from "react-icons/fa";
 const Projects = () => {
   return (
@@ -9,7 +10,7 @@ const Projects = () => {
         <h2 className="text-white text-[30px] font-bold mx-auto">
           Live/Personal <span className="text-indigo-600"> Projects </span>
         </h2>
-        <div className="grid grid-cols-2 gap-[40px] gap-x-[80px]">
+        <div className="grid grid-cols-3 gap-[40px] gap-x-[40px]">
           <Project />
           <Project />
           <Project />
@@ -23,9 +24,9 @@ export default Projects;
 
 const Project = () => {
   return (
-    <div className="flex flex-col md:flex-row gap-4 items-center rounded-2xl bg-gray-800 pl-4 shadow-lg hover:shadow-2xl transition-shadow duration-300">
+    <div className="flex flex-col border-solid border-1 md:flex-row gap-4 items-center rounded-2xl bg-gray-800 h-[250px] pl-4 shadow-lg hover:shadow-2xl transition-shadow duration-300">
       <div className="flex-1">
-        <h3 className="text-white text-xl font-semibold mb-2">Project Title</h3>
+        <h3 className="text-white text-xl font-semibold mb-2">Mktechy</h3>
         <div className="flex gap-4 items-center text-[18px] mb-2">
           <a
             href="https://github.com/your-repo-link"
@@ -49,11 +50,11 @@ const Project = () => {
           </a>
         </div>
       </div>
-      <div className="w-full md:w-[60%]">
+      <div className="w-full md:w-[60%] h-full ">
         <Image
-          src={ekopages}
+          src={Mctechy}
           alt="Project Thumbnail"
-          className="rounded-tr-2xl rounded-br-2xl w-full object-cover"
+          className="rounded-tr-2xl  rounded-br-2xl h-full w-full "
         />
       </div>
     </div>
