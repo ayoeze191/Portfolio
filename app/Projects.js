@@ -156,35 +156,15 @@ function Projects() {
             loop={true}
             effect={"cards"}
           >
-            <SwiperSlide>
-              <div>
-                <div>
-                  <Image src={useCase[0].image} />
+            {useCase.map((use, index) => (
+              <SwiperSlide key={index}>
+                <div className="rounded-[8px]">
+                  <div>
+                    <Image src={use.image} className="rounded-[8px]" />
+                  </div>
                 </div>
-              </div>
-            </SwiperSlide>
-            <SwiperSlide>
-              <div>
-                <div>
-                  <Image src={useCase[0].image} />
-                </div>
-              </div>
-            </SwiperSlide>{" "}
-            <SwiperSlide>
-              <div>
-                <div>
-                  <Image src={useCase[0].image} />
-                </div>
-              </div>
-            </SwiperSlide>{" "}
-            <SwiperSlide>
-              <div>
-                <div>
-                  <Image src={useCase[0].image} />
-                </div>
-              </div>
-            </SwiperSlide>
-            ...
+              </SwiperSlide>
+            ))}
           </Swiper>
           {/* <div className="relative">
             <div className="absolute bottom-0 px-5 py-6 bg-gradient-to-t from-black to-transparent rounded-3xl">
