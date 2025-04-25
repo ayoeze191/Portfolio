@@ -2,7 +2,9 @@ import React from "react";
 import { motion } from "motion/react";
 const SideBar = () => {
   return (
-    <div
+    <motion.div
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
       className="bg-black border-t-[1px] w-full border-t-white/20 fixed bottom-0 left-0 px-[10px] md:px-[20px]"
       style={{ height: "calc(100% - 64px)" }}
     >
@@ -12,7 +14,7 @@ const SideBar = () => {
         <Navitem text="Experience" secs={3} />
         <Navitem text="Projects" secs={4} />
       </div>
-    </div>
+    </motion.div>
   );
 };
 
