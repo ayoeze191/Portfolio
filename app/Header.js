@@ -1,6 +1,7 @@
 "use client";
 import React from "react";
 import { GiHamburgerMenu } from "react-icons/gi";
+import motion from "motion/react";
 const Header = () => {
   const [isScrolled, setIsScrolled] = React.useState(false);
 
@@ -44,8 +45,13 @@ export default Header;
 const Navitem = ({ text }) => {
   return (
     <li
-      className="hover:text-[#3730A3] cursor-pointer hover:underline cur"
-      style={{ textUnderlineOffset: "10px" }}
+      className="hover:text-[#3730A3] cursor-pointer hover:underline"
+      style={{
+        textUnderlineOffset: "10px",
+        transition: "color 0.3s ease, transform 0.3s ease",
+      }}
+      onMouseEnter={(e) => (e.target.style.transform = "scale(1.1)")}
+      onMouseLeave={(e) => (e.target.style.transform = "scale(1)")}
     >
       {text}
     </li>

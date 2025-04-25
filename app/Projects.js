@@ -33,15 +33,15 @@ const useCase = [
       "Develop essential skills and knowledge for aspiring entrepreneurs, equipping them with the tools and insights needed to start and grow successful businesses.",
     image: dogify,
     url: "https://dogifii.netlify.app/",
-    github: "git@github.com:ayoeze191/Ekopages.git",
+    github: "git@github.com:ayoeze191/dogify.git",
   },
   {
     title: "Mktechy (A landing page for an Edtech)",
     description:
       "Develop essential skills and knowledge for aspiring entrepreneurs, equipping them with the tools and insights needed to start and grow successful businesses.",
     image: Mctechy,
-    url: "ekopages.com",
-    github: "git@github.com:ayoeze191/Ekopages.git",
+    url: "https://mktechy.netlify.app/ ",
+    github: "git@github.com:ayoeze191/mctechy.git",
   },
   {
     title: "Misfit (An Ecommerce Platform)",
@@ -134,9 +134,9 @@ function Projects() {
     titleRefs.current[index] = el;
   };
   return (
-    <div className="py-[85px] px-[20px] ">
-      <div className="max-w-7xl mx-auto flex flex-col gap-[40px] items-center">
-        <h2 className="text-white text-[30px] font-bold mx-auto">
+    <div className="py-[40px] md:py-[85px] px-[20px] ">
+      <div className="max-w-7xl mx-auto flex flex-col gap-[20px] md:gap-[40px] items-center">
+        <h2 className="text-white text-[20px] md:text-[30px] font-bold mx-auto">
           Live <span className="text-indigo-600">Projects</span>
         </h2>
 
