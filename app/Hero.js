@@ -22,9 +22,11 @@ const Hero = () => {
             problem-solver with a detail-oriented mindset and a drive to deliver
             impactful, high-quality solutions.
           </p>
-          <div className="mt-8 text-base ">
-            <button className="border-solid border-[#6366f1] border-1 px-[32px] py-[12px] cursor-pointer">
-              View My Resume
+          <div className="mt-8 text-base relative w-fit cursor-pointer">
+            <button className="border-solid border-[#6366f1]  border-1 px-[32px] py-[12px] cursor-pointer after:absolute after:h-full after:w-0 hover:after:w-full after:transition-all after:bg-[#6366f1] after:content-[''] after:left-0 after:top-0">
+              <button className="z-[1] relative cursor-pointer h-full w-full">
+                View My Resume
+              </button>
             </button>
           </div>
         </div>

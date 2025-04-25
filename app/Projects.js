@@ -1,62 +1,235 @@
+"use client";
+
 import Image from "next/image";
-import React from "react";
-import ekopages from "./assets/images/Projects/ekopages.png";
-import Mctechy from "./assets/images/Projects/Mctechy.png";
-import { FaGithub } from "react-icons/fa";
-const Projects = () => {
+import { motion, AnimatePresence } from "motion/react";
+import { useState, useEffect, useRef } from "react";
+import { FaExpandArrowsAlt } from "react-icons/fa";
+// import lpIconArrow from "@/assets/svg/learnpally_arrows.svg";
+// import ImageSkillBuilding from "@/assets/img/use-case/skill-building.png";
+// import ImageForTeams from "@/assets/img/use-case/teams-and-large.png";
+import ekopages from "./../app/assets/images/Projects/ekopages.png";
+import Mctechy from "./../app/assets/images/Projects/Mctechy.png";
+import misfit from "./../app/assets/images/Projects/Misfit.png";
+import nerdy from "./../app/assets/images/Projects/Nerdy.png";
+import matacare from "./../app/assets/images/Projects/matacare.png";
+import dogify from "./../app/assets/images/Projects/Dogify.png";
+import shibayc from "./../app/assets/images/Projects/shibayc.png";
+
+import { GiArrowCluster } from "react-icons/gi";
+
+const useCase = [
+  {
+    title: "Ekopages (An SDG Website )",
+    description:
+      "Gain recognized credentials and specialized knowledge through comprehensive programs offered by leading African universities, designed to advance your career and expertise.",
+    image: ekopages,
+  },
+  {
+    title:
+      "Dogify (A Dog website with various features like lazy loading and co)",
+    description:
+      "Develop essential skills and knowledge for aspiring entrepreneurs, equipping them with the tools and insights needed to start and grow successful businesses.",
+    image: dogify,
+  },
+  {
+    title: "Mktechy (A landing page for an Edtech)",
+    description:
+      "Develop essential skills and knowledge for aspiring entrepreneurs, equipping them with the tools and insights needed to start and grow successful businesses.",
+    image: Mctechy,
+  },
+  {
+    title: "Misfit (An Ecommerce Platform)",
+    description:
+      "Tailor your learning experience to meet the needs of your team or organization, with access to a wide range of courses and resources designed for corporate and professional development.",
+    image: misfit,
+  },
+  {
+    title: "Up/Re-Skilling for entrepreneurs & career people",
+    description:
+      "Enhance your skills and knowledge to stay competitive in the job market or start a successful business, with access to a wide range of courses and resources designed for personal and professional development.",
+    image: nerdy,
+  },
+];
+
+const variants = {
+  enter: (direction) => ({
+    x: direction > 0 ? 1000 : -1000,
+    opacity: 0,
+    position: "absolute",
+    top: 0,
+  }),
+  center: {
+    zIndex: 1,
+    x: 0,
+    opacity: 1,
+    position: "relative",
+    top: 0,
+  },
+  exit: (direction) => ({
+    zIndex: 0,
+    x: direction < 0 ? 1000 : -1000,
+    opacity: 0,
+    position: "absolute",
+    top: 0,
+  }),
+};
+
+function Projects() {
+  const [activeIndex, setActiveIndex] = useState(0);
+  const [isAutoPlaying, setIsAutoPlaying] = useState(true);
+  const [indicatorTop, setIndicatorTop] = useState(0);
+  const [direction, setDirection] = useState(0);
+  const titleRefs = useRef([]);
+
+  useEffect(() => {
+    let interval;
+
+    if (isAutoPlaying) {
+      interval = setInterval(() => {
+        setDirection(1);
+        setActiveIndex((prevIndex) => (prevIndex + 1) % useCase.length);
+      }, 5000); // Switch every 5 seconds
+    }
+
+    return () => {
+      if (interval) {
+        clearInterval(interval);
+      }
+    };
+  }, [isAutoPlaying]);
+
+  useEffect(() => {
+    const activeTitle = titleRefs.current[activeIndex];
+    if (activeTitle) {
+      const parentTop =
+        activeTitle.offsetParent?.getBoundingClientRect().top ?? 0;
+      const titleTop = activeTitle.getBoundingClientRect().top - parentTop;
+      setIndicatorTop(titleTop + activeTitle.offsetHeight / 2 - 10);
+    }
+  }, [activeIndex]);
+
+  const handleUseCaseClick = (index) => {
+    setDirection(index > activeIndex ? 1 : -1);
+    setIsAutoPlaying(false);
+    setActiveIndex(index);
+
+    const timeout = setTimeout(() => {
+      setIsAutoPlaying(true);
+    }, 10000);
+
+    return () => clearTimeout(timeout);
+  };
+
+  const setTitleRef = (index) => (el) => {
+    titleRefs.current[index] = el;
+  };
   return (
-    <div className="py-[85px]">
+    <div className="py-[85px] px-[20px] ">
       <div className="max-w-7xl mx-auto flex flex-col gap-[40px] items-center">
         <h2 className="text-white text-[30px] font-bold mx-auto">
-          Live/Personal <span className="text-indigo-600"> Projects </span>
+          Live <span className="text-indigo-600">Projects</span>
         </h2>
-        <div className="grid grid-cols-3 gap-[40px] gap-x-[40px]">
-          <Project />
-          <Project />
-          <Project />
-          <Project />
-        </div>
-      </div>
-    </div>
-  );
-};
-export default Projects;
 
-const Project = () => {
-  return (
-    <div className="flex flex-col border-solid border-1 md:flex-row gap-4 items-center rounded-2xl bg-gray-800 h-[250px] pl-4 shadow-lg hover:shadow-2xl transition-shadow duration-300">
-      <div className="flex-1">
-        <h3 className="text-white text-xl font-semibold mb-2">Mktechy</h3>
-        <div className="flex gap-4 items-center text-[18px] mb-2">
-          <a
-            href="https://github.com/your-repo-link"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="flex items-center gap-2 text-white hover:text-indigo-500 transition-colors duration-300"
-          >
-            <FaGithub className="text-2xl" />
-            <span>Github</span>
-          </a>
+        <div className="mt-8 lg:hidden">
+          <div className="relative">
+            <div className="absolute bottom-0 px-5 py-6 bg-gradient-to-t from-black to-transparent rounded-3xl">
+              <p className="text-xl text-[#FAFAFA] font-semibold">
+                {useCase[activeIndex].title}
+              </p>
+              <p className="mt-4 text-sm text-[#D0D1DA]">
+                {useCase[activeIndex].description}
+              </p>
+            </div>
+            <Image
+              className="rounded-3xl shadow-lg"
+              src={useCase[activeIndex].image}
+              alt="Use Case Side Image"
+            />
+          </div>
         </div>
-        <div className="flex gap-4 items-center text-[18px]">
-          <a
-            href="https://your-live-project-link"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="flex items-center gap-2 text-white hover:text-indigo-500 transition-colors duration-300"
-          >
-            <span className="text-2xl">🔗</span>
-            <span>Live</span>
-          </a>
+        <div className="mt-8 hidden items-center justify-between lg:flex">
+          <div className="max-w-[350px] w-full">
+            <div className="relative">
+              <motion.div
+                layoutId="activeIndicator"
+                className="absolute -left-7"
+                animate={{
+                  top: indicatorTop,
+                }}
+                transition={{ type: "spring", bounce: 0.2, duration: 0.6 }}
+              >
+                <FaExpandArrowsAlt size={20} color="#6366f1" />
+              </motion.div>
+              {useCase.map((item, index) => (
+                <motion.div
+                  key={index}
+                  ref={setTitleRef(index)}
+                  initial={{ opacity: 0, x: -20 }}
+                  animate={{ opacity: 1, x: 0 }}
+                  transition={{ duration: 0.3, delay: index * 0.1 }}
+                  className={`flex cursor-pointer items-center gap-x-4 px-2 py-4 ${
+                    index === 0 ? "" : "mt-4"
+                  } `}
+                  onClick={() => handleUseCaseClick(index)}
+                >
+                  <motion.div
+                    initial={false}
+                    animate={{
+                      color: index === activeIndex ? "#6366f1" : "#D0D1DA",
+                    }}
+                    transition={{ duration: 0.2 }}
+                  >
+                    <p className="text-[18px] font-medium">{item.title}</p>
+                  </motion.div>
+                </motion.div>
+              ))}
+            </div>
+          </div>
+          <div className="relative overflow-hidden">
+            <AnimatePresence initial={false}>
+              <motion.div
+                key={activeIndex}
+                custom={direction}
+                variants={variants}
+                initial="enter"
+                animate="center"
+                exit="exit"
+                transition={{
+                  x: { type: "spring", stiffness: 300, damping: 30 },
+                  opacity: { duration: 0.3 },
+                }}
+                className="relative after:bg-[black] after:opacity-[0.5] after:absolute after:top-0 after:left-0 after:content-[''] after:h-full after:w-full rounded-2xl shadow-lg"
+              >
+                <Image
+                  src={useCase[activeIndex].image}
+                  alt="Use Case Side Image"
+                  className="rounded-2xl"
+                />
+                <motion.div
+                  className="absolute bottom-0 px-10 py-6 gap-4 bg-gradient-to-t from-black to-transparent rounded-b-2xl"
+                  initial={{ opacity: 0, y: 20 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ delay: 0.2 }}
+                >
+                  <div className="flex gap-4">
+                    <button className="bg-[#6366f1] hover:bg-[#4F51D1] cursor-pointer z-10 shadow px-4 py-2 text-[16px] rounded-[8px] text-white font-medium">
+                      Github
+                    </button>
+                    <button className="bg-[#6366f1] hover:bg-[#4F51D1] cursor-pointer z-10 shadow px-4 py-2 text-[16px] rounded-[8px] text-white font-medium">
+                      Live Demo
+                    </button>
+                  </div>
+                  <p className="mt-4 text-sm text-[#D0D1DA] z-10">
+                    {useCase[activeIndex].description}
+                  </p>
+                </motion.div>
+              </motion.div>
+            </AnimatePresence>
+          </div>
         </div>
-      </div>
-      <div className="w-full md:w-[60%] h-full ">
-        <Image
-          src={Mctechy}
-          alt="Project Thumbnail"
-          className="rounded-tr-2xl  rounded-br-2xl h-full w-full "
-        />
       </div>
     </div>
   );
-};
+}
+
+export default Projects;
