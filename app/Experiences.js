@@ -9,8 +9,8 @@ const experiences = [
       "Developed custom skeleton loading states, enhancing perceived performance and user experience during data fetching.",
       "Integrated RESTful APIs for seamless data flow, using Postman for testing and validation.",
     ],
-    stacks: ["React", " Tailwind", "Redux", "Axios"],
-    url: "ekopages.com",
+    stacks: ["ReactJs", " Tailwind", "Redux", "Axios"],
+    url: "https://ekopages.com",
   },
 
   {
@@ -22,21 +22,21 @@ const experiences = [
       "Developed custom skeleton loading states, enhancing perceived performance and user experience during data fetching.",
       "Integrated RESTful APIs for seamless data flow, using Postman for testing and validation.",
     ],
-    stacks: ["Vue3", "Bulma css", "Pinia", "Axios"],
-    url: "ekopages.com",
+    stacks: ["VueJs", "Bulma css", "Pinia", "Axios"],
+    url: "https://RentAnything.io",
   },
 
   {
     period: "Sept 2024 - Present",
-    work: "Frontend Developer (remote)",
-    company: "Ekopages",
+    work: "FullStack Web and Mobile Engineer (remote)",
+    company: "Learnpally",
     experiences_gained: [
       "Transformed Figma designs into pixel-perfect, responsive interfaces for SellCrea8, reducing revision cycles and improving collaboration.",
       "Developed custom skeleton loading states, enhancing perceived performance and user experience during data fetching.",
       "Integrated RESTful APIs for seamless data flow, using Postman for testing and validation.",
     ],
     stacks: ["React", " Tailwind", "Redux", "Axios"],
-    url: "ekopages.com",
+    url: "learnpally.com",
   },
 ];
 const Experiences = () => {
@@ -67,17 +67,19 @@ const Experience = ({
   stacks,
 }) => {
   return (
-    <a
-      className="flex flex-col md:flex-row text-[14px] md:text-[16px] text-[#6B7280] gap-6 md:gap-8 transform transition-transform duration-300 hover:scale-105"
-      href={url}
-    >
+    <div className="flex flex-col md:flex-row text-[14px] md:text-[16px] text-[#6B7280] gap-6 md:gap-8">
       <p className="md:sticky md:top-18 md:w-[250px] self-start font-medium">
         {period}
       </p>
-      <div className="flex-1 bg-[#1F2937] p-6 md:p-8 rounded-lg text-[13px] md:text-[15px] shadow-lg">
+      <a
+        href={url}
+        target="_blank"
+        rel="noopener noreferrer"
+        className="flex-1 bg-[#1F2937] p-6 md:p-8 rounded-lg text-[13px] md:text-[15px] shadow-lg  transform transition-transform duration-300 hover:scale-105"
+      >
         <p className="text-white font-semibold mb-3 md:mb-4">
           {work}
-          <span className="text-indigo-500">{company}</span>
+          <span className="text-indigo-500">{" " + company}</span>
         </p>
         <ul className="list-disc list-inside space-y-4">
           {experiences_gained.map((gains, key) => (
@@ -94,7 +96,7 @@ const Experience = ({
             </div>
           ))}
         </div>
-      </div>
-    </a>
+      </a>
+    </div>
   );
 };

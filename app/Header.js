@@ -1,7 +1,9 @@
 "use client";
-import React from "react";
+import React, { useState } from "react";
 import { GiHamburgerMenu } from "react-icons/gi";
 import motion from "motion/react";
+import SideBar from "./SideBar";
+import { IoCloseSharp } from "react-icons/io5";
 const Header = () => {
   const [isScrolled, setIsScrolled] = React.useState(false);
 
@@ -13,6 +15,7 @@ const Header = () => {
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
+  const [showSideBar, setShowSideBar] = useState(false);
 
   return (
     <div
@@ -20,8 +23,9 @@ const Header = () => {
         isScrolled ? "h-16" : "h-18"
       }`}
     >
-      <div className="flex justify-between w-full  px-[20px] max-w-7xl mx-auto items-center ">
-        <div className="text-[20px]">&lt;Eazy/&gt;</div>
+      {showSideBar && <SideBar />}
+      <div className="flex justify-between w-full px-[10px]  md:px-[20px] max-w-7xl mx-auto items-center ">
+        <div className="text-[14px] md:text-[20px]">&lt;Eazy/&gt;</div>
 
         <div className="md:flex w-fit hidden gap-12 items-center text-[1rem]">
           <nav className="list-none flex gap-8 items-center">
@@ -34,7 +38,20 @@ const Header = () => {
                             Download Resume
                     </button> */}
         </div>
-        <GiHamburgerMenu className="md:hidden" fontSize={20} />
+        <button
+          onClick={() => setShowSideBar(!showSideBar)}
+          className="nav:hidden cursor-pointer text-2xl px-2 flex items-center rounded-sm h-[30px] nav-sm:h-[35px] text-white bg-white/10"
+        >
+          {!showSideBar ? (
+            <GiHamburgerMenu
+              className="md:hidden"
+              fontSize={20}
+              color="white"
+            />
+          ) : (
+            <IoCloseSharp className="md:hidden" fontSize={20} color="white" />
+          )}
+        </button>
       </div>
     </div>
   );

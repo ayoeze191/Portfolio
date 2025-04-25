@@ -23,8 +23,8 @@ const useCase = [
     description:
       "Gain recognized credentials and specialized knowledge through comprehensive programs offered by leading African universities, designed to advance your career and expertise.",
     image: ekopages,
-    url: "ekopages.com",
-    github: "git@github.com:ayoeze191/Ekopages.git",
+    url: "https://ekopages.com",
+    github: "https://github.com/ayoeze191/Ekopages",
   },
   {
     title:
@@ -33,7 +33,7 @@ const useCase = [
       "Develop essential skills and knowledge for aspiring entrepreneurs, equipping them with the tools and insights needed to start and grow successful businesses.",
     image: dogify,
     url: "https://dogifii.netlify.app/",
-    github: "git@github.com:ayoeze191/dogify.git",
+    github: "https://github.com/ayoeze191/dogify",
   },
   {
     title: "Mktechy (A landing page for an Edtech)",
@@ -41,23 +41,23 @@ const useCase = [
       "Develop essential skills and knowledge for aspiring entrepreneurs, equipping them with the tools and insights needed to start and grow successful businesses.",
     image: Mctechy,
     url: "https://mktechy.netlify.app/ ",
-    github: "git@github.com:ayoeze191/mctechy.git",
+    github: "https://github.com/ayoeze191/mctechy",
   },
   {
     title: "Misfit (An Ecommerce Platform)",
     description:
       "Tailor your learning experience to meet the needs of your team or organization, with access to a wide range of courses and resources designed for corporate and professional development.",
     image: misfit,
-    url: "ekopages.com",
-    github: "git@github.com:ayoeze191/Ekopages.git",
+    url: "https://ekopages.com",
+    github: "https://git@github.com:ayoeze191/Ekopages.git",
   },
   {
     title: "Matacare Landing Page(A landing page for an hospital)",
     description:
       "Enhance your skills and knowledge to stay competitive in the job market or start a successful business, with access to a wide range of courses and resources designed for personal and professional development.",
     image: matacare,
-    url: "ekopages.com",
-    github: "git@github.com:ayoeze191/Ekopages.git",
+    url: "https://ekopages.com",
+    github: "https://git@github.com:ayoeze191/Ekopages.git",
   },
 ];
 
@@ -222,12 +222,22 @@ function Projects() {
                   transition={{ delay: 0.2 }}
                 >
                   <div className="flex gap-4">
-                    <button className="bg-[#6366f1] hover:bg-[#4F51D1] cursor-pointer z-10 shadow px-4 py-2 text-[16px] rounded-[8px] text-white font-medium">
+                    <a
+                      className="bg-[#6366f1] hover:bg-[#4F51D1] cursor-pointer z-10 shadow px-4 py-2 text-[16px] rounded-[8px] text-white font-medium"
+                      href={useCase[activeIndex].github}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
                       Github
-                    </button>
-                    <button className="bg-[#6366f1] hover:bg-[#4F51D1] cursor-pointer z-10 shadow px-4 py-2 text-[16px] rounded-[8px] text-white font-medium">
+                    </a>
+                    <a
+                      className="bg-[#6366f1] hover:bg-[#4F51D1] cursor-pointer z-10 shadow px-4 py-2 text-[16px] rounded-[8px] text-white font-medium"
+                      href={useCase[activeIndex].url}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
                       Live Demo
-                    </button>
+                    </a>
                   </div>
                   <p className="mt-4 text-sm text-[#D0D1DA] z-10">
                     {useCase[activeIndex].description}
