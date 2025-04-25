@@ -20,7 +20,7 @@ import nerdy from "./../app/assets/images/Projects/Nerdy.png";
 import matacare from "./../app/assets/images/Projects/matacare.png";
 import dogify from "./../app/assets/images/Projects/Dogify.png";
 import shibayc from "./../app/assets/images/Projects/shibayc.png";
-
+import { EffectCards } from "swiper/modules";
 import { GiArrowCluster } from "react-icons/gi";
 
 const useCase = [
@@ -146,22 +146,44 @@ function Projects() {
           Live <span className="text-indigo-600">Projects</span>
         </h2>
 
-        <div className="mt-8 lg:hidden">
+        <div className="mt-8 lg:hidden  w-full">
           <Swiper
-            modules={[Navigation, Pagination, Scrollbar, A11y]}
+            modules={[EffectCards]}
             spaceBetween={50}
             slidesPerView={3}
-            navigation
-            pagination={{ clickable: true }}
-            scrollbar={{ draggable: true }}
             onSwiper={(swiper) => console.log(swiper)}
             onSlideChange={() => console.log("slide change")}
             loop={true}
+            effect={"cards"}
           >
-            <SwiperSlide>Slide 1</SwiperSlide>
-            <SwiperSlide>Slide 2</SwiperSlide>
-            <SwiperSlide>Slide 3</SwiperSlide>
-            <SwiperSlide>Slide 4</SwiperSlide>
+            <SwiperSlide>
+              <div>
+                <div>
+                  <Image src={useCase[0].image} />
+                </div>
+              </div>
+            </SwiperSlide>
+            <SwiperSlide>
+              <div>
+                <div>
+                  <Image src={useCase[0].image} />
+                </div>
+              </div>
+            </SwiperSlide>{" "}
+            <SwiperSlide>
+              <div>
+                <div>
+                  <Image src={useCase[0].image} />
+                </div>
+              </div>
+            </SwiperSlide>{" "}
+            <SwiperSlide>
+              <div>
+                <div>
+                  <Image src={useCase[0].image} />
+                </div>
+              </div>
+            </SwiperSlide>
             ...
           </Swiper>
           {/* <div className="relative">
