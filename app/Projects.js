@@ -4,6 +4,12 @@ import Image from "next/image";
 import { motion, AnimatePresence } from "motion/react";
 import { useState, useEffect, useRef } from "react";
 import { FaExpandArrowsAlt } from "react-icons/fa";
+import { Swiper, SwiperSlide } from "swiper/react";
+import "swiper/css";
+import "swiper/css/navigation";
+import "swiper/css/pagination";
+import "swiper/css/scrollbar";
+import { Navigation, Pagination, Scrollbar, A11y } from "swiper/modules";
 // import lpIconArrow from "@/assets/svg/learnpally_arrows.svg";
 // import ImageSkillBuilding from "@/assets/img/use-case/skill-building.png";
 // import ImageForTeams from "@/assets/img/use-case/teams-and-large.png";
@@ -141,7 +147,24 @@ function Projects() {
         </h2>
 
         <div className="mt-8 lg:hidden">
-          <div className="relative">
+          <Swiper
+            modules={[Navigation, Pagination, Scrollbar, A11y]}
+            spaceBetween={50}
+            slidesPerView={3}
+            navigation
+            pagination={{ clickable: true }}
+            scrollbar={{ draggable: true }}
+            onSwiper={(swiper) => console.log(swiper)}
+            onSlideChange={() => console.log("slide change")}
+            loop={true}
+          >
+            <SwiperSlide>Slide 1</SwiperSlide>
+            <SwiperSlide>Slide 2</SwiperSlide>
+            <SwiperSlide>Slide 3</SwiperSlide>
+            <SwiperSlide>Slide 4</SwiperSlide>
+            ...
+          </Swiper>
+          {/* <div className="relative">
             <div className="absolute bottom-0 px-5 py-6 bg-gradient-to-t from-black to-transparent rounded-3xl">
               <p className="text-xl text-[#FAFAFA] font-semibold">
                 {useCase[activeIndex].title}
@@ -155,7 +178,7 @@ function Projects() {
               src={useCase[activeIndex].image}
               alt="Use Case Side Image"
             />
-          </div>
+          </div> */}
         </div>
         <div className="mt-8 hidden items-center justify-between lg:flex">
           <div className="max-w-[350px] w-full">
