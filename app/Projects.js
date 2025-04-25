@@ -23,6 +23,8 @@ const useCase = [
     description:
       "Gain recognized credentials and specialized knowledge through comprehensive programs offered by leading African universities, designed to advance your career and expertise.",
     image: ekopages,
+    url: "ekopages.com",
+    github: "git@github.com:ayoeze191/Ekopages.git",
   },
   {
     title:
@@ -30,24 +32,32 @@ const useCase = [
     description:
       "Develop essential skills and knowledge for aspiring entrepreneurs, equipping them with the tools and insights needed to start and grow successful businesses.",
     image: dogify,
+    url: "https://dogifii.netlify.app/",
+    github: "git@github.com:ayoeze191/Ekopages.git",
   },
   {
     title: "Mktechy (A landing page for an Edtech)",
     description:
       "Develop essential skills and knowledge for aspiring entrepreneurs, equipping them with the tools and insights needed to start and grow successful businesses.",
     image: Mctechy,
+    url: "ekopages.com",
+    github: "git@github.com:ayoeze191/Ekopages.git",
   },
   {
     title: "Misfit (An Ecommerce Platform)",
     description:
       "Tailor your learning experience to meet the needs of your team or organization, with access to a wide range of courses and resources designed for corporate and professional development.",
     image: misfit,
+    url: "ekopages.com",
+    github: "git@github.com:ayoeze191/Ekopages.git",
   },
   {
-    title: "Up/Re-Skilling for entrepreneurs & career people",
+    title: "Matacare Landing Page(A landing page for an hospital)",
     description:
       "Enhance your skills and knowledge to stay competitive in the job market or start a successful business, with access to a wide range of courses and resources designed for personal and professional development.",
-    image: nerdy,
+    image: matacare,
+    url: "ekopages.com",
+    github: "git@github.com:ayoeze191/Ekopages.git",
   },
 ];
 
