@@ -40,7 +40,7 @@ const Header = () => {
         </div>
         <button
           onClick={() => setShowSideBar(!showSideBar)}
-          className="nav:hidden cursor-pointer text-2xl px-2 flex items-center rounded-sm h-[30px] nav-sm:h-[35px] text-white bg-white/10"
+          className="md:hidden cursor-pointer text-2xl px-2 flex items-center rounded-sm h-[30px] nav-sm:h-[35px] text-white bg-white/10"
         >
           {!showSideBar ? (
             <GiHamburgerMenu

@@ -31,6 +31,7 @@ const useCase = [
     image: ekopages,
     url: "https://ekopages.com",
     github: "https://github.com/ayoeze191/Ekopages",
+    stacks: ["tailwind", "reactjs", "Aos", "swipper", "Django Rest Framework"],
   },
   {
     title:
@@ -40,6 +41,7 @@ const useCase = [
     image: dogify,
     url: "https://dogifii.netlify.app/",
     github: "https://github.com/ayoeze191/dogify",
+    stacks: ["nextjs", "tailwind", "Zustand", "typescript"],
   },
   {
     title: "Mktechy (A landing page for an Edtech)",
@@ -48,6 +50,7 @@ const useCase = [
     image: Mctechy,
     url: "https://mktechy.netlify.app/ ",
     github: "https://github.com/ayoeze191/mctechy",
+    stacks: ["React", "tailwind", "typescript"],
   },
   {
     title: "Misfit (An Ecommerce Platform)",
@@ -56,6 +59,7 @@ const useCase = [
     image: misfit,
     url: "https://ekopages.com",
     github: "https://git@github.com:ayoeze191/Ekopages.git",
+    stacks: ["tailwind", "reactjs", "Django Rest Framework"],
   },
   {
     title: "Matacare Landing Page(A landing page for an hospital)",
@@ -64,6 +68,7 @@ const useCase = [
     image: matacare,
     url: "https://ekopages.com",
     github: "https://git@github.com:ayoeze191/Ekopages.git",
+    stacks: ["tailwind", "reactjs", "typescript"],
   },
 ];
 
@@ -146,41 +151,17 @@ function Projects() {
           Live <span className="text-indigo-600">Projects</span>
         </h2>
 
-        <div className="mt-8 lg:hidden  w-full">
-          <Swiper
-            modules={[EffectCards]}
-            spaceBetween={50}
-            slidesPerView={3}
-            onSwiper={(swiper) => console.log(swiper)}
-            onSlideChange={() => console.log("slide change")}
-            loop={true}
-            effect={"cards"}
-          >
-            {useCase.map((use, index) => (
-              <SwiperSlide key={index}>
-                <div className="rounded-[8px]">
-                  <div>
-                    <Image src={use.image} className="rounded-[8px]" />
-                  </div>
-                </div>
-              </SwiperSlide>
-            ))}
-          </Swiper>
-          {/* <div className="relative">
-            <div className="absolute bottom-0 px-5 py-6 bg-gradient-to-t from-black to-transparent rounded-3xl">
-              <p className="text-xl text-[#FAFAFA] font-semibold">
-                {useCase[activeIndex].title}
-              </p>
-              <p className="mt-4 text-sm text-[#D0D1DA]">
-                {useCase[activeIndex].description}
-              </p>
-            </div>
-            <Image
-              className="rounded-3xl shadow-lg"
-              src={useCase[activeIndex].image}
-              alt="Use Case Side Image"
+        <div className="mt-8 lg:hidden  w-full flex flex-col gap-4">
+          {/* <Project img={useCase[0].image.src} /> */}
+          {useCase.map((use, index) => (
+            <Project
+              img={use.image.src}
+              key={index}
+              stacks={use.stacks}
+              link={use.url}
+              github={use.github}
             />
-          </div> */}
+          ))}
         </div>
         <div className="mt-8 hidden items-center justify-between lg:flex">
           <div className="max-w-[350px] w-full">
@@ -278,3 +259,110 @@ function Projects() {
 }
 
 export default Projects;
+
+const Project = ({ img, stacks, link, github }) => {
+  return (
+    <div className=" bg-[#1F2937] mx-auto rounded-lg overflow-hidden shadow-md hover:shadow-xl transition-all duration-500 ease-in-out m-4 flex flex-col transform hover:-translate-y-1">
+      <div className="relative w-full h-48 overflow-hidden">
+        <img
+          src={img}
+          alt={img}
+          className="object-cover transition-transform duration-700 ease-in-out scale-100"
+        />
+      </div>
+      <div className="px-6 py-4 overflow-auto backdrop-blur-sm">
+        <h2 className="font-bold text-xl mb-2 transition-colors duration-300">
+          Ace It
+        </h2>
+        <p className="text-gray-500 text-base transition-colors duration-300 text-[13px] md:text-[15px]">
+          ace it turns your notes into study material using ai. this project was
+          made du buildspace s5.
+        </p>
+        <div className="flex mt-2 flex-wrap text-[13px] md:text-[15px]">
+          {stacks.map((stack, index) => {
+            const getRandomColor = () => {
+              const colors = [
+                "#0CA5E9",
+                "#F59E0B",
+                "#10B981",
+                "#EF4444",
+                "#8B5CF6",
+                "#EC4899",
+              ];
+              return colors[Math.floor(Math.random() * colors.length)];
+            };
+
+            return (
+              <span
+                key={index}
+                className="flex items-center bg-gray-200 hover:bg-gray-300 text-gray-700 text-sm font-semibold mr-2 mb-2 px-2 py-1 rounded-full transition-all w-fit duration-300 ease-in-out transform hover:scale-105"
+              >
+                <span
+                  className="w-2 h-2 rounded-full mr-2 transition-transform duration-300"
+                  style={{ backgroundColor: getRandomColor() }}
+                ></span>
+                {stack}
+              </span>
+            );
+          })}
+        </div>
+        <div className=" pt-8  flex justify-between items-center  backdrop-blur-sm">
+          <a
+            href={link}
+            className="flex items-center text-green-500 hover:text-green-700 transition-all duration-300 ease-in-out transform hover:scale-105"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="24"
+              height="24"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              strokeWidth="2"
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              className="lucide lucide-mouse-pointer-click w-5 h-5 mr-2 transition-transform duration-300"
+            >
+              <path d="m9 9 5 12 1.8-5.2L21 14Z"></path>
+              <path d="M7.2 2.2 8 5.1"></path>
+              <path d="m5.1 8-2.9-.8"></path>
+              <path d="M14 4.1 12 6"></path>
+              <path d="m6 12-1.9 2"></path>
+            </svg>
+            <span>Live Demo</span>
+          </a>
+          <a
+            href={github}
+            className="flex items-center text-red-500 hover:text-red-700 transition-all duration-300 ease-in-out transform hover:scale-105"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="24"
+              height="24"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              strokeWidth="2"
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              className="lucide lucide-github w-5 h-5 mr-2 transition-transform duration-300 hover:rotate-6 text-inherit"
+            >
+              <path d="M9 19c-5 1.5-5-2.5-7-3" />
+              <path d="M20 21v-2.87a3.37 3.37 0 0 0-.94-2.61" />
+              <path d="M14 21c-3.14.35-6.44-1.54-6.44-7a5.44 5.44 0 0 1 1.5-3.77" />
+              <path d="M12 3.5a5.07 5.07 0 0 1 1.91.39c.68.27 1.49.81 2.09 1.57" />
+              <path d="M12 3.5c-.9 0-1.8.15-2.65.48A5.5 5.5 0 0 0 6 7.5c0 5.46 3.3 6.65 6.44 7" />
+            </svg>
+            <span>GitHub</span>
+          </a>
+        </div>
+      </div>
+    </div>
+  );
+};
+
+return Project;
