@@ -134,11 +134,9 @@ function Projects() {
     setIsAutoPlaying(false);
     setActiveIndex(index);
 
-    const timeout = setTimeout(() => {
+    setTimeout(() => {
       setIsAutoPlaying(true);
     }, 10000);
-
-    return () => clearTimeout(timeout);
   };
 
   const setTitleRef = (index) => (el) => {
@@ -257,7 +255,17 @@ function Projects() {
     </div>
   );
 }
-
+const getRandomColor = () => {
+  const colors = [
+    "#0CA5E9",
+    "#F59E0B",
+    "#10B981",
+    "#EF4444",
+    "#8B5CF6",
+    "#EC4899",
+  ];
+  return colors[Math.floor(Math.random() * colors.length)];
+};
 export default Projects;
 
 const Project = ({ img, stacks, link, github }) => {
@@ -279,32 +287,18 @@ const Project = ({ img, stacks, link, github }) => {
           made du buildspace s5.
         </p>
         <div className="flex mt-2 flex-wrap text-[13px] md:text-[15px]">
-          {stacks.map((stack, index) => {
-            const getRandomColor = () => {
-              const colors = [
-                "#0CA5E9",
-                "#F59E0B",
-                "#10B981",
-                "#EF4444",
-                "#8B5CF6",
-                "#EC4899",
-              ];
-              return colors[Math.floor(Math.random() * colors.length)];
-            };
-
-            return (
+          {stacks.map((stack, index) => (
+            <span
+              key={index}
+              className="flex items-center bg-gray-200 hover:bg-gray-300 text-gray-700 text-sm font-semibold mr-2 mb-2 px-2 py-1 rounded-full transition-all w-fit duration-300 ease-in-out transform hover:scale-105"
+            >
               <span
-                key={index}
-                className="flex items-center bg-gray-200 hover:bg-gray-300 text-gray-700 text-sm font-semibold mr-2 mb-2 px-2 py-1 rounded-full transition-all w-fit duration-300 ease-in-out transform hover:scale-105"
-              >
-                <span
-                  className="w-2 h-2 rounded-full mr-2 transition-transform duration-300"
-                  style={{ backgroundColor: getRandomColor() }}
-                ></span>
-                {stack}
-              </span>
-            );
-          })}
+                className="w-2 h-2 rounded-full mr-2 transition-transform duration-300"
+                style={{ backgroundColor: getRandomColor() }}
+              ></span>
+              {stack}
+            </span>
+          ))}
         </div>
         <div className=" pt-8  flex justify-between items-center  backdrop-blur-sm">
           <a
@@ -364,5 +358,3 @@ const Project = ({ img, stacks, link, github }) => {
     </div>
   );
 };
-
-return Project;
