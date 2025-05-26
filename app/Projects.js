@@ -171,6 +171,8 @@ function Projects() {
               stacks={use.stacks}
               link={use.url}
               github={use.github}
+              title={use.title}
+              description={use.description}
             />
           ))}
         </div>
