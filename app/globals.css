@@ -1,20 +1,28 @@
 @import "tailwindcss";
 
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+@layer utilities {
+  .font-spacemono {
+  }
+}
 :root {
   --background: #ffffff;
-  --foreground: #171717;
+  /* --foreground: #171717; */
 }
 
 @theme inline {
-  --color-background: var(--background);
+  /* --color-background: var(--background); */
   --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
 }
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --background: #0a0a0a;
+    /* --background: rgb(31 41 55 / 1); */
+    /* ; */
+  /* --background: rgb(15 23 42 / 1); */
+    --background:#111827;
     --foreground: #ededed;
   }
 }
@@ -22,5 +30,101 @@
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+    /* font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif; */
+
+  font-family: monospace
+}
+
+@font-face {
+  font-family: 'SpaceMono';
+  src: url('/app/assets/Font/SpaceMono-Regular.woff2') format('woff2'),
+       url('/app/assets/Font/SpaceMono-Regular.woff') format('woff');
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'SpaceMono';
+  src: url('/app/assets/Font/SpaceMono-Bold.woff2') format('woff2'),
+       url('/app/assets/Font/SpaceMono-Bold.woff') format('woff');
+  font-weight: 700;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'SpaceMono';
+  src: url('/app/assets/Font/SpaceMono-Italic.woff2') format('woff2'),
+       url('/app/assets/Font/SpaceMono-Italic.woff') format('woff');
+  font-weight: 400;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: 'SpaceMono';
+  src: url('/app/assets/Font/SpaceMono-BoldItalic.woff2') format('woff2'),
+       url('/app/assets/Font/SpaceMono-BoldItalic.woff') format('woff');
+  font-weight: 700;
+  font-style: italic;
+}
+
+
+.swiper {
+  width: 100%;
+  height: 320px;
+}
+.swiper-wrapper{
+  width: 100% !important;
+  transform: translate(10%) !important;
+  /* background-color: red !important; */
+}
+
+.swiper-slide {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 8px;
+  font-size: 22px;
+  font-weight: bold;
+  color: #fff;
+  width: 80% !important;
+}
+
+.swiper-slide:nth-child(1n) {
+  background-color: rgb(206, 17, 17);
+}
+
+.swiper-slide:nth-child(2n) {
+  background-color: rgb(0, 140, 255);
+}
+
+.swiper-slide:nth-child(3n) {
+  background-color: rgb(10, 184, 111);
+}
+
+.swiper-slide:nth-child(4n) {
+  background-color: rgb(211, 122, 7);
+}
+
+.swiper-slide:nth-child(5n) {
+  background-color: rgb(118, 163, 12);
+}
+
+.swiper-slide:nth-child(6n) {
+  background-color: rgb(180, 10, 47);
+}
+
+.swiper-slide:nth-child(7n) {
+  background-color: rgb(35, 99, 19);
+}
+
+.swiper-slide:nth-child(8n) {
+  background-color: rgb(0, 68, 255);
+}
+
+.swiper-slide:nth-child(9n) {
+  background-color: rgb(218, 12, 218);
+}
+
+.swiper-slide:nth-child(10n) {
+  background-color: rgb(54, 94, 77);
 }
