@@ -154,7 +154,11 @@ function Projects() {
       }}
     >
       <div className="max-w-7xl mx-auto flex flex-col gap-[20px] md:gap-[40px] items-center">
-        <h2 className="text-white text-[20px] md:text-[30px] font-bold mx-auto">
+        <h2
+          className={`${
+            theme == "dark" ? "text-white" : "text-gray-800"
+          } text-[20px] md:text-[30px] font-bold mx-auto`}
+        >
           Live <span className="text-indigo-600">Projects</span>
         </h2>
 
@@ -277,7 +281,7 @@ const getRandomColor = () => {
 };
 export default Projects;
 
-const Project = ({ img, stacks, link, github }) => {
+const Project = ({ img, stacks, link, github, title, description }) => {
   const { theme, setTheme } = useTheme();
 
   return (
@@ -296,11 +300,11 @@ const Project = ({ img, stacks, link, github }) => {
       </div>
       <div className="px-6 py-4 overflow-auto backdrop-blur-sm">
         <h2 className="font-bold text-xl mb-2 transition-colors duration-300">
-          Ace It
+          {title || "Project Title"}
         </h2>
         <p className="text-gray-500 text-base transition-colors duration-300 text-[13px] md:text-[15px]">
-          ace it turns your notes into study material using ai. this project was
-          made du buildspace s5.
+          {description ||
+            "This is a brief description of the project. It highlights the main features and functionalities of the project, showcasing its purpose and value."}
         </p>
         <div className="flex mt-2 flex-wrap text-[13px] md:text-[15px]">
           {stacks.map((stack, index) => (

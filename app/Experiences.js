@@ -56,7 +56,11 @@ const Experiences = () => {
     >
       <div className="max-w-7xl mx-auto flex flex-col gap-[20px] md:gap-[40px] items-center">
         <Fade delay={0.005} inView>
-          <h2 className="text-white text-[20px] md:text-[30px] font-bold mx-auto">
+          <h2
+            className={`${
+              theme == "dark" ? "text-white" : "text-gray-800"
+            } text-[20px] md:text-[30px] font-bold mx-auto`}
+          >
             Professional <span className="text-indigo-600"> Experience</span>
           </h2>
         </Fade>
