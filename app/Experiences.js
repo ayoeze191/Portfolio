@@ -2,6 +2,8 @@
 
 import React from "react";
 import { useTheme } from "next-themes";
+import { motion } from "motion/react";
+import Fade from "./components/Fade";
 const experiences = [
   {
     period: "Sept 2024 - Present",
@@ -53,12 +55,17 @@ const Experiences = () => {
       }}
     >
       <div className="max-w-7xl mx-auto flex flex-col gap-[20px] md:gap-[40px] items-center">
-        <h2 className="text-white text-[20px] md:text-[30px] font-bold mx-auto">
-          Professional <span className="text-indigo-600"> Experience</span>
-        </h2>
+        <Fade delay={0.005} inView>
+          <h2 className="text-white text-[20px] md:text-[30px] font-bold mx-auto">
+            Professional <span className="text-indigo-600"> Experience</span>
+          </h2>
+        </Fade>
         <div className="flex flex-col md:gap-[40px] gap-[25px]">
           {experiences.map((exp, index) => (
-            <Experience {...exp} key={index} />
+            <Fade key={index} delay={index * 0.01} inView>
+              {" "}
+              <Experience {...exp} key={index} />
+            </Fade>
           ))}
         </div>
       </div>

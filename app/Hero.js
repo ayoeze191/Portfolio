@@ -3,6 +3,7 @@ import React from "react";
 import me from "./assets/images/output.webp";
 import Image from "next/image";
 import { useTheme } from "next-themes";
+import Fade from "./components/Fade";
 
 const Hero = () => {
   const { theme, setTheme } = useTheme();
@@ -18,38 +19,44 @@ const Hero = () => {
     >
       <div className="flex justify-between max-w-7xl mx-auto items-center gap-20">
         <div>
-          <h2
-            className="text-[30px] md:text-[50px] "
-            style={{
-              color: theme === "dark" ? "#e5e7eb" : "#1f2937",
-            }}
-          >
-            Hello, I&apos;m <span className="font-bold ">Ezekiel</span>
-          </h2>
-          <p className="text-[14px] md:text-[18px]  mt-8">
-            I&apos;m a Software Engineer with a strong foundation in both web
-            and mobile application development. Proficient in building
-            responsive and intuitive user interfaces using frameworks like React
-            and React Native, and experienced in backend development with
-            Node.js, Express, and Django. Adept at creating scalable
-            architectures, integrating APIs, and ensuring cross-platform
-            compatibility. Passionate about writing clean, maintainable code and
-            continuously learning new technologies. A collaborative
-            problem-solver with a detail-oriented mindset and a drive to deliver
-            impactful, high-quality solutions.
-          </p>
-          <div className="mt-8 text-base relative w-fit cursor-pointer">
-            <button className="border-solid border-[#6366f1]  border-1 px-[32px] py-[12px] cursor-pointer after:absolute after:h-full after:w-0 hover:after:w-full after:transition-all after:bg-[#6366f1] after:content-[''] after:left-0 after:top-0">
-              <button
-                className="z-[1] relative cursor-pointer h-full w-full"
-                style={{
-                  color: theme === "dark" ? "#e5e7eb" : "#1f2937",
-                }}
-              >
-                View My Resume
+          <Fade delay={0.005} inView>
+            <h2
+              className="text-[30px] md:text-[50px] "
+              style={{
+                color: theme === "dark" ? "#e5e7eb" : "#1f2937",
+              }}
+            >
+              Hello, I&apos;m <span className="font-bold ">Ezekiel</span>
+            </h2>
+          </Fade>
+          <Fade delay={0.1} inView>
+            <p className="text-[14px] md:text-[18px]  mt-8">
+              I&apos;m a Software Engineer with a strong foundation in both web
+              and mobile application development. Proficient in building
+              responsive and intuitive user interfaces using frameworks like
+              React and React Native, and experienced in backend development
+              with Node.js, Express, and Django. Adept at creating scalable
+              architectures, integrating APIs, and ensuring cross-platform
+              compatibility. Passionate about writing clean, maintainable code
+              and continuously learning new technologies. A collaborative
+              problem-solver with a detail-oriented mindset and a drive to
+              deliver impactful, high-quality solutions.
+            </p>
+          </Fade>
+          <Fade delay={0.3} inView>
+            <div className="mt-8 text-base relative w-fit cursor-pointer">
+              <button className="border-solid border-[#6366f1]  border-1 px-[32px] py-[12px] cursor-pointer after:absolute after:h-full after:w-0 hover:after:w-full after:transition-all after:bg-[#6366f1] after:content-[''] after:left-0 after:top-0">
+                <button
+                  className="z-[1] relative cursor-pointer h-full w-full"
+                  style={{
+                    color: theme === "dark" ? "#e5e7eb" : "#1f2937",
+                  }}
+                >
+                  View My Resume
+                </button>
               </button>
-            </button>
-          </div>
+            </div>
+          </Fade>
         </div>
 
         <div className="relative hidden lg:block">

@@ -5,6 +5,8 @@ import { motion, AnimatePresence } from "motion/react";
 import { useState, useEffect, useRef } from "react";
 import { FaExpandArrowsAlt } from "react-icons/fa";
 import { Swiper, SwiperSlide } from "swiper/react";
+import { useTheme } from "next-themes";
+
 import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
@@ -96,6 +98,8 @@ const variants = {
 };
 
 function Projects() {
+  const { theme, setTheme } = useTheme();
+
   const [activeIndex, setActiveIndex] = useState(0);
   const [isAutoPlaying, setIsAutoPlaying] = useState(true);
   const [indicatorTop, setIndicatorTop] = useState(0);
@@ -143,7 +147,12 @@ function Projects() {
     titleRefs.current[index] = el;
   };
   return (
-    <div className="py-[40px] md:py-[85px] px-[20px] ">
+    <div
+      className="py-[40px] md:py-[85px] px-[20px] "
+      style={{
+        backgroundColor: theme === "dark" ? "" : "white",
+      }}
+    >
       <div className="max-w-7xl mx-auto flex flex-col gap-[20px] md:gap-[40px] items-center">
         <h2 className="text-white text-[20px] md:text-[30px] font-bold mx-auto">
           Live <span className="text-indigo-600">Projects</span>
@@ -269,8 +278,15 @@ const getRandomColor = () => {
 export default Projects;
 
 const Project = ({ img, stacks, link, github }) => {
+  const { theme, setTheme } = useTheme();
+
   return (
-    <div className=" bg-[#1F2937] mx-auto rounded-lg overflow-hidden shadow-md hover:shadow-xl transition-all duration-500 ease-in-out m-4 flex flex-col transform hover:-translate-y-1">
+    <div
+      className="  mx-auto rounded-lg overflow-hidden shadow-md hover:shadow-xl transition-all duration-500 ease-in-out m-4 flex flex-col transform hover:-translate-y-1"
+      style={{
+        backgroundColor: theme === "dark" ? "#1F2937" : "white",
+      }}
+    >
       <div className="relative w-full h-48 overflow-hidden">
         <img
           src={img}
