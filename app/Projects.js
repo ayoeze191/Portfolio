@@ -54,23 +54,31 @@ const useCase = [
     github: "https://github.com/ayoeze191/mctechy",
     stacks: ["React", "tailwind", "typescript"],
   },
-  {
-    title: "Misfit (An Ecommerce Platform)",
-    description:
-      "Tailor your learning experience to meet the needs of your team or organization, with access to a wide range of courses and resources designed for corporate and professional development.",
-    image: misfit,
-    url: "https://ekopages.com",
-    github: "https://git@github.com:ayoeze191/Ekopages.git",
-    stacks: ["tailwind", "reactjs", "Django Rest Framework"],
-  },
+  // {
+  //   title: "Misfit (An Ecommerce Platform)",
+  //   description:
+  //     "Tailor your learning experience to meet the needs of your team or organization, with access to a wide range of courses and resources designed for corporate and professional development.",
+  //   image: misfit,
+  //   url: "https://ekopages.com",
+  //   github: "https://git@github.com:ayoeze191/Ekopages.git",
+  //   stacks: ["tailwind", "reactjs", "Django Rest Framework"],
+  // },
   {
     title: "Matacare Landing Page(A landing page for an hospital)",
     description:
       "Enhance your skills and knowledge to stay competitive in the job market or start a successful business, with access to a wide range of courses and resources designed for personal and professional development.",
     image: matacare,
-    url: "https://ekopages.com",
+    url: "https://matacare.netlify.app",
     github: "https://git@github.com:ayoeze191/Ekopages.git",
     stacks: ["tailwind", "reactjs", "typescript"],
+  },
+  {
+    title: "Nerdyeye",
+    description: "https://nerdyeye1.netlify.app/",
+    image: nerdy,
+    url: "https://nerdyeye1.netlify.app/",
+    github: "",
+    stacks: ["tailwind", "reactjs"],
   },
 ];
 
@@ -147,8 +155,9 @@ function Projects() {
     titleRefs.current[index] = el;
   };
   return (
-    <div
-      className="py-[40px] md:py-[85px] px-[20px] "
+    <section
+      id="Projects"
+      className="py-[40px] md:py-[85px] px-[20px] min-h-screen "
       style={{
         backgroundColor: theme === "dark" ? "" : "white",
       }}
@@ -208,7 +217,13 @@ function Projects() {
                     }}
                     transition={{ duration: 0.2 }}
                   >
-                    <p className="text-[18px] font-medium">{item.title}</p>
+                    <p
+                      className={`text-[18px] font-medium ${
+                        theme !== "dark" ? "text-black" : ""
+                      }`}
+                    >
+                      {item.title}
+                    </p>
                   </motion.div>
                 </motion.div>
               ))}
@@ -267,7 +282,7 @@ function Projects() {
           </div>
         </div>
       </div>
-    </div>
+    </section>
   );
 }
 const getRandomColor = () => {
@@ -301,7 +316,11 @@ const Project = ({ img, stacks, link, github, title, description }) => {
         />
       </div>
       <div className="px-6 py-4 overflow-auto backdrop-blur-sm">
-        <h2 className="font-bold text-xl mb-2 transition-colors duration-300">
+        <h2
+          className={`font-bold ${
+            theme !== "dark" && "text-black"
+          } text-xl mb-2 transition-colors duration-300`}
+        >
           {title || "Project Title"}
         </h2>
         <p className="text-gray-500 text-base transition-colors duration-300 text-[13px] md:text-[15px]">

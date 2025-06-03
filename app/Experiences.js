@@ -47,8 +47,9 @@ const experiences = [
 const Experiences = () => {
   const theme = useTheme();
   return (
-    <div
-      className="py-[40px] md:py-[85px] px-[20px]"
+    <section
+      id="Experience"
+      className="py-[40px] md:py-[85px] px-[20px] min-h-screen"
       style={{
         backgroundColor: theme.theme === "dark" ? "" : "white",
         color: theme.theme === "dark" ? "#e5e7eb" : "#111827",
@@ -58,7 +59,7 @@ const Experiences = () => {
         <Fade delay={0.005} inView>
           <h2
             className={`${
-              theme == "dark" ? "text-white" : "text-gray-800"
+              theme.theme == "dark" ? "text-white" : "text-gray-800"
             } text-[20px] md:text-[30px] font-bold mx-auto`}
           >
             Professional <span className="text-indigo-600"> Experience</span>
@@ -73,7 +74,7 @@ const Experiences = () => {
           ))}
         </div>
       </div>
-    </div>
+    </section>
   );
 };
 
@@ -119,7 +120,9 @@ const Experience = ({
           {stacks.map((stack, index) => (
             <div
               key={index}
-              className="text-indigo-500 rounded-[20px] border-solid border-1 bg-[#3730A3] px-3 md:px-5 py-1"
+              className={`${
+                theme.theme == "dark" ? "text-indigo-500" : "text-yellow-500"
+              } rounded-[20px] border-solid border-1 bg-[#3730A3] px-3 md:px-5 py-1`}
             >
               {stack}
             </div>

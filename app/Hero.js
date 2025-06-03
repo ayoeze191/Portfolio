@@ -9,8 +9,9 @@ const Hero = () => {
   const { theme, setTheme } = useTheme();
 
   return (
-    <div
-      className="py-[85px] px-[20px]"
+    <section
+      id="About"
+      className="py-[85px] px-[20px] min-h-screen"
       style={{
         backgroundColor: theme === "dark" ? "#1f2937" : "#f3f4f6",
 
@@ -77,7 +78,7 @@ const Hero = () => {
           <div className="w-[90%] -left-5 bg-white h-full absolute top-5 "></div>
         </div> */}
       </div>
-    </div>
+    </section>
   );
 };
 
