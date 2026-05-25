@@ -106,8 +106,6 @@ const variants = {
 };
 
 function Projects() {
-  const { theme, setTheme } = useTheme();
-
   const [activeIndex, setActiveIndex] = useState(0);
   const [isAutoPlaying, setIsAutoPlaying] = useState(true);
   const [indicatorTop, setIndicatorTop] = useState(0);
@@ -299,7 +297,7 @@ const Project = ({ img, stacks, link, github, title, description }) => {
     <div
       className="  mx-auto rounded-lg overflow-hidden shadow-md hover:shadow-xl transition-all duration-500 ease-in-out m-4 flex flex-col transform hover:-translate-y-1"
       style={{
-        backgroundColor: theme === "dark" ? "#1F2937" : "white",
+        backgroundColor: "#1F2937",
       }}
     >
       <div className="relative w-full h-48 overflow-hidden">

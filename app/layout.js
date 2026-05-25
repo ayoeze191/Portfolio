@@ -1,6 +1,5 @@
 import "./globals.css";
 import Header from "./Header";
-import { ThemeProvider } from "next-themes";
 
 export const metadata = {
   title: "EazyCode",

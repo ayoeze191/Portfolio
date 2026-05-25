@@ -14,7 +14,6 @@ const Hero = () => {
       id="About"
       className="py-[85px] px-[20px] min-h-screen md:min-h-fit relative"
       style={{
-        // backgroundColor: "#1f2937",
         color: "#e5e7eb",
       }}
     >

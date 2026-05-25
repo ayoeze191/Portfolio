@@ -35,7 +35,6 @@ const Header = () => {
     };
   }, []);
 
-  const { theme, setTheme } = useTheme();
   React.useEffect(() => {
     const handleScroll = () => {
       setIsScrolled(window.scrollY > 0);
@@ -45,9 +44,7 @@ const Header = () => {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
   const [showSideBar, setShowSideBar] = useState(false);
-  useEffect(() => {
-    console.log(theme, "theme");
-  }, [theme]);
+
   return (
     <div
       className={`  fixed top-0 flex left-0 w-full z-50 transition-all duration-300 shadow ${
@@ -70,26 +67,13 @@ const Header = () => {
 
         <div className="md:flex w-fit hidden gap-12 items-center text-[1rem]">
           <nav className="list-none flex gap-8 items-center">
-            <Navitem
-              text="Home"
-              mode={theme}
-              active={activeSection === "Home"}
-            />
-            <Navitem
-              text="About"
-              mode={theme}
-              active={activeSection === "About"}
-            />
+            <Navitem text="Home" active={activeSection === "Home"} />
+            <Navitem text="About" active={activeSection === "About"} />
             <Navitem
               text="Experience"
-              mode={theme}
               active={activeSection === "Experience"}
             />
-            <Navitem
-              text="Projects"
-              mode={theme}
-              active={activeSection === "Projects"}
-            />
+            <Navitem text="Projects" active={activeSection === "Projects"} />
           </nav>
           {/* <button className="bg-[#05df72] rounded-3xl p-5 text-[1rem] font-semibold">
                             Download Resume
@@ -97,22 +81,16 @@ const Header = () => {
         </div>
         <button
           onClick={() => setShowSideBar(!showSideBar)}
-          className={`md:hidden cursor-pointer text-2xl px-2 flex items-center rounded-sm h-[30px] nav-sm:h-[35px]  bg-white/10 ${
-            theme == "dark" ? "bg-white/10" : "bg-gray-200"
-          }`}
+          className={`md:hidden cursor-pointer text-2xl px-2 flex items-center rounded-sm h-[30px] nav-sm:h-[35px]  bg-white/10 ${"bg-white/10"}`}
         >
           {!showSideBar ? (
             <GiHamburgerMenu
               className="md:hidden"
               fontSize={20}
-              color={theme == "dark" ? "white" : "black"}
+              color={"white"}
             />
           ) : (
-            <IoCloseSharp
-              className="md:hidden"
-              fontSize={20}
-              color={theme == "dark" ? "white" : "black"}
-            />
+            <IoCloseSharp className="md:hidden" fontSize={20} color={"white"} />
           )}
         </button>
         {/* <button
@@ -146,7 +124,7 @@ const Header = () => {
 
 export default Header;
 
-const Navitem = ({ text, mode, active }) => {
+const Navitem = ({ text, active }) => {
   const handleClick = () => {
     const section = document.getElementById(text);
     if (section) {
