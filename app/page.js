@@ -3,6 +3,7 @@ import Hero from "./Hero";
 import Experiences from "./Experiences";
 import Projects from "./Projects";
 import Faq from "./Faq";
+import GetInTouch from "./components/GetInTouch";
 
 export default function Home() {
   return (
@@ -11,6 +12,7 @@ export default function Home() {
       <Experiences />
       <Projects />
       <Faq />
+      <GetInTouch />
     </div>
   );
 }

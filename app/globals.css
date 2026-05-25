@@ -12,13 +12,13 @@
   --color-foreground: var(--background);
 }
 
-
+@media (prefers-color-scheme: dark) {
   :root {
   
     --background:#111827;
     --foreground: #ededed;
   }
-
+}
 html {
   scroll-behavior: smooth;
 }

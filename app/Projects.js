@@ -4,27 +4,17 @@ import Image from "next/image";
 import { motion, AnimatePresence } from "motion/react";
 import { useState, useEffect, useRef } from "react";
 import { FaExpandArrowsAlt } from "react-icons/fa";
-import { Swiper, SwiperSlide } from "swiper/react";
 import { useTheme } from "next-themes";
-
 import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
 import "swiper/css/scrollbar";
-import { Navigation, Pagination, Scrollbar, A11y } from "swiper/modules";
-// import lpIconArrow from "@/assets/svg/learnpally_arrows.svg";
-// import ImageSkillBuilding from "@/assets/img/use-case/skill-building.png";
-// import ImageForTeams from "@/assets/img/use-case/teams-and-large.png";
 import ekopages from "./../app/assets/images/Projects/ekopages.png";
 import Mctechy from "./../app/assets/images/Projects/Mctechy.png";
 import misfit from "./../app/assets/images/Projects/Misfit.png";
 import nerdy from "./../app/assets/images/Projects/Nerdy.png";
 import matacare from "./../app/assets/images/Projects/matacare.png";
 import dogify from "./../app/assets/images/Projects/Dogify.png";
-import shibayc from "./../app/assets/images/Projects/shibayc.png";
-import { EffectCards } from "swiper/modules";
-import { GiArrowCluster } from "react-icons/gi";
-
 const useCase = [
   {
     title: "Ekopages (An SDG Website )",
