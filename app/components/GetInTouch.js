@@ -44,7 +44,7 @@ const GetInTouch = () => {
                   <div>
                     <p className="text-gray-400 text-sm">Email</p>
                     <p className="text-white text-[15px] md:text-[16px]">
-                      ezekiel@example.com
+                      ayoeze191@gmail.com
                     </p>
                   </div>
                 </div>
@@ -57,7 +57,7 @@ const GetInTouch = () => {
                   <div>
                     <p className="text-gray-400 text-sm">Phone</p>
                     <p className="text-white text-[15px] md:text-[16px]">
-                      +234 XXX XXX XXXX
+                      +2349037183645
                     </p>
                   </div>
                 </div>
