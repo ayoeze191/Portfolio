@@ -3,8 +3,7 @@
 import React, { useState } from "react";
 
 import Fade from "./components/Fade";
-// import FaqBackground from "./components/FaqBackground";
-// import { useTheme } from "next-themes";
+
 import { FaAngleDown } from "react-icons/fa6";
 const Faq = () => {
   return (

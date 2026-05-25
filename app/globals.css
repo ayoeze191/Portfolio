@@ -5,7 +5,11 @@
   .font-spacemono {
   }
 }
-
+ :root {
+  
+    --background:#111827;
+    --foreground: #ededed;
+  }
 
 @theme inline {
   /* --color-background: var(--background); */

@@ -144,9 +144,7 @@ const Experience = ({
           {stacks.map((stack, index) => (
             <div
               key={index}
-              className={`${
-                theme.theme == "dark" ? "text-indigo-500" : "text-yellow-500"
-              } rounded-[20px] border-solid border-1 bg-[#3730A3] px-3 md:px-5 py-1`}
+              className={`${"text-indigo-500"} rounded-[20px] border-solid border-1 bg-[#3730A3] px-3 md:px-5 py-1`}
             >
               {stack}
             </div>

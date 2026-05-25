@@ -4,7 +4,7 @@ import { GiHamburgerMenu } from "react-icons/gi";
 import { motion } from "motion/react";
 import SideBar from "./SideBar";
 import { IoCloseSharp } from "react-icons/io5";
-import { useTheme } from "next-themes";
+
 import { FaMoon } from "react-icons/fa";
 import { WiDaySunny } from "react-icons/wi";
 // Header former color
@@ -93,30 +93,6 @@ const Header = () => {
             <IoCloseSharp className="md:hidden" fontSize={20} color={"white"} />
           )}
         </button>
-        {/* <button
-          className="text-[20px] cursor-pointer"
-          onClick={() => setTheme(theme === "dark" ? "light" : "dark")}
-        >
-          {theme === "dark" ? (
-            <motion.span
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              transition={{ duration: 1 }}
-              exit={{ opacity: 0 }}
-            >
-              <WiDaySunny fontSize={20} />
-            </motion.span>
-          ) : (
-            <motion.span
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              transition={{ duration: 1 }}
-              exit={{ opacity: 0 }}
-            >
-              <FaMoon fontSize={20} color="black" />
-            </motion.span>
-          )}
-        </button> */}
       </div>
     </div>
   );
