@@ -8,79 +8,18 @@ const GetInTouch = () => {
   return (
     <section
       id="Contact"
-      className="relative py-[40px] md:py-[85px] px-[20px] min-h-screen overflow-hidden"
+      className="relative py-[40px] md:py-[85px] px-[20px] w-full  overflow-hidden"
     >
-      <div className="relative z-10 max-w-7xl mx-auto flex flex-col gap-[20px] md:gap-[40px] items-center">
+      <div className="relative z-10 max-w-xl  w-full  mx-auto flex flex-col gap-[20px] md:gap-[40px] items-center">
         <Fade delay={0.005} inView>
           <h2 className="text-white text-[20px] md:text-[30px] font-bold mx-auto">
             Get In <span className="text-indigo-600">Touch</span>
           </h2>
         </Fade>
 
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 w-full">
-          {/* Left Side */}
-          <Fade delay={0.01} inView>
-            <div className="bg-[#1F2937] border border-gray-600/30 rounded-lg p-6 md:p-8 hover:border-gray-500/50 transition-all duration-300 h-full">
-              <p className="text-indigo-500 font-medium mb-3">
-                Contact Information
-              </p>
-
-              <h3 className="text-white text-[24px] md:text-[32px] font-bold leading-tight">
-                Let’s work on your next big project together.
-              </h3>
-
-              <p className="text-[#9CA3AF] mt-5 leading-relaxed text-[14px] md:text-[16px]">
-                I’m currently open to freelance opportunities, frontend and
-                full-stack roles, collaborations, and exciting startup ideas.
-                Feel free to reach out anytime.
-              </p>
-
-              <div className="flex flex-col gap-5 mt-10">
-                <div className="flex items-center gap-4 group">
-                  <div className="bg-[#374151] p-3 rounded-lg group-hover:bg-indigo-600 transition-all duration-300">
-                    <Mail size={20} className="text-white" />
-                  </div>
-
-                  <div>
-                    <p className="text-gray-400 text-sm">Email</p>
-                    <p className="text-white text-[15px] md:text-[16px]">
-                      ayoeze191@gmail.com
-                    </p>
-                  </div>
-                </div>
-
-                <div className="flex items-center gap-4 group">
-                  <div className="bg-[#374151] p-3 rounded-lg group-hover:bg-indigo-600 transition-all duration-300">
-                    <Phone size={20} className="text-white" />
-                  </div>
-
-                  <div>
-                    <p className="text-gray-400 text-sm">Phone</p>
-                    <p className="text-white text-[15px] md:text-[16px]">
-                      +2349037183645
-                    </p>
-                  </div>
-                </div>
-
-                <div className="flex items-center gap-4 group">
-                  <div className="bg-[#374151] p-3 rounded-lg group-hover:bg-indigo-600 transition-all duration-300">
-                    <MapPin size={20} className="text-white" />
-                  </div>
-
-                  <div>
-                    <p className="text-gray-400 text-sm">Location</p>
-                    <p className="text-white text-[15px] md:text-[16px]">
-                      Lagos, Nigeria
-                    </p>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </Fade>
-
-          {/* Right Side */}
-          <Fade delay={0.02} inView>
-            <form className="bg-[#1F2937] border border-gray-600/30 rounded-lg p-6 md:p-8 hover:border-gray-500/50 transition-all duration-300 flex flex-col gap-5">
+        <div className="flex justify-center w-full  ">
+          <Fade delay={0.02} inView className={"w-full"}>
+            <form className="bg-[#1F2937] w-full border border-gray-600/30 rounded-lg p-6 md:p-8 hover:border-gray-500/50 transition-all duration-300 flex flex-col gap-5">
               <div>
                 <label className="text-gray-300 text-sm mb-2 block">
                   Full Name
@@ -131,7 +70,7 @@ const GetInTouch = () => {
 
               <button
                 type="submit"
-                className="bg-indigo-600 hover:bg-indigo-700 transition-all duration-300 text-white font-medium py-3 rounded-lg flex items-center justify-center gap-2 mt-2"
+                className="bg-[#6366f1] hover:bg-[#4F51D1] flex items-center justify-center gap-4 cursor-pointer z-10 shadow px-4 py-2 text-[16px] rounded-[8px] text-white font-medium"
               >
                 Send Message
                 <Send size={18} />

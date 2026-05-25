@@ -145,7 +145,7 @@ function Projects() {
   return (
     <section
       id="Projects"
-      className="py-[40px] md:py-[85px] px-[20px] min-h-screen "
+      className="py-[40px] md:py-[85px] px-[20px] "
       style={{
         backgroundColor: "",
       }}

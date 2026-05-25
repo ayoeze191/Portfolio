@@ -9,7 +9,7 @@ const Faq = () => {
   return (
     <section
       id="Faq"
-      className="relative py-[40px] md:py-[85px] px-[20px] min-h-screen overflow-hidden"
+      className="relative py-[40px] md:py-[85px] px-[20px]  overflow-hidden"
     >
       {/* Background Animation */}
 
