@@ -28,7 +28,7 @@ html {
   scroll-behavior: smooth;
 }
 body {
-  background: var(--background);
+  background: var(--background) !important;
   color: var(--foreground);
     /* font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif; */
 
