@@ -11,10 +11,10 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en" suppressHydrationWarning>
       <body>
-        <ThemeProvider attribute="class" enableSystem>
-          <Header />
-          <div className="mt-[64px]">{children}</div>
-        </ThemeProvider>
+        {/* <ThemeProvider attribute="class"> */}
+        <Header />
+        <div className="mt-[64px]">{children}</div>
+        {/* </ThemeProvider> */}
       </body>
     </html>
   );
