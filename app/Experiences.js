@@ -9,7 +9,7 @@ const experiences = [
     period: "Oct 2024 – Present",
     work: "Full-Stack Engineer (Web & Mobile)",
     company: "Learnpally",
-    url: "https://learnpally.com",
+    url: "https://learn.learnpally.com",
     experiences_gained: [
       "Built responsive React web interfaces and React Native mobile screens with consistent UX across platforms.",
       "Integrated Mixpanel & PostHog for event tracking, funnel analysis, and product insights.",
